@@ -1,5 +1,7 @@
 # Skills
 
+[![skills.sh](https://skills.sh/b/ivanfilhoz/skills)](https://skills.sh/ivanfilhoz/skills)
+
 Personal agent-agnostic skills for use with [skills.sh](https://skills.sh/).
 
 Each skill lives in a top-level folder and contains a `SKILL.md` file with `name` and `description` frontmatter.
