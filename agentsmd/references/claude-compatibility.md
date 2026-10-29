@@ -16,4 +16,4 @@ Keep an import when supporting older or unsupported sessions. Direct loading als
 
 ## Verification
 
-Start a fresh session in the intended working directory and check the startup notice identifying the loaded AGENTS.md. Check nested instructions separately when used. An existing `@AGENTS.md` import loads content correctly without duplication; removing it is optional.
+Start a fresh session in the intended working directory and check the startup notice identifying the loaded AGENTS.md. Check nested instructions separately when used. If the session cannot run, retain the existing import unless the project explicitly excludes the unverified environments from support. An existing `@AGENTS.md` import loads content correctly without duplication; removing it is optional.

@@ -14,3 +14,4 @@ This repository is a personal skills collection using the skills.sh `SKILL.md` f
 - Keep this `AGENTS.md` file as the source of truth for repository instructions.
 - Maintain skill sources in their top-level folders; installed copies are not the editing source.
 - Prefer direct `AGENTS.md` loading. Before adding or removing Claude compatibility files, follow `agentsmd/references/claude-compatibility.md`.
+- Retain this repository's minimal `CLAUDE.md` import until direct loading is verified for its supported environments.

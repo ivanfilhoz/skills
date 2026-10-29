@@ -36,4 +36,4 @@ Then edit `<skill-name>/SKILL.md` to keep the instructions concise, procedural, 
 
 ## Repository Instructions
 
-`AGENTS.md` is the source of truth for agent guidance in this repository. For Claude Code, use a version and configuration that support direct loading; see [Claude compatibility](agentsmd/references/claude-compatibility.md) for prerequisites and fallback options.
+`AGENTS.md` is the source of truth for agent guidance in this repository. This repository retains a minimal `CLAUDE.md` import until direct loading is verified for its supported environments. See [Claude compatibility](agentsmd/references/claude-compatibility.md) for prerequisites and fallback options.

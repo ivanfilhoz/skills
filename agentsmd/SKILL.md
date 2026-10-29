@@ -45,7 +45,7 @@ This workflow follows the AGENTS.md guidance from https://www.aihero.dev/a-compl
 6. Verify the result.
    - Re-read the final files for contradictions, broken links, stale paths, and commands that do not exist.
    - If you added or changed commands, run the smallest relevant verification command when practical.
-   - After removing a Claude proxy, verify direct loading in a fresh Claude Code session when available. Report an unverified runtime explicitly; file presence and version checks alone do not prove loading. Preserve or restore the proxy if verification shows instructions are missing.
+   - Before finalizing proxy removal, verify direct loading in a fresh Claude Code session. File presence and version checks alone do not prove loading. If verification fails or cannot run, preserve or restore the import unless the project explicitly excludes the unverified environments from support. Report the verification result and any support limitation.
    - Summarize what moved into root `AGENTS.md`, what moved into progressive docs, and any unresolved decisions.
 
 ## Root AGENTS.md Shape
