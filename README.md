@@ -8,7 +8,7 @@ Each skill lives in a top-level folder and contains a `SKILL.md` file with `name
 
 ## Skills
 
-- `agentsmd`: Create, update, and maintain an `AGENTS.md` file as the source of truth for repository agent instructions, with a `CLAUDE.md` proxy when needed.
+- [agentsmd](agentsmd/SKILL.md): Create, update, and maintain `AGENTS.md` as the source of truth for repository agent instructions. Prefer native loading and retain a `CLAUDE.md` import only when compatibility requires it.
 
 ## Usage
 
@@ -36,4 +36,4 @@ Then edit `<skill-name>/SKILL.md` to keep the instructions concise, procedural, 
 
 ## Repository Instructions
 
-`AGENTS.md` is the source of truth for agent guidance in this repository. `CLAUDE.md` is a proxy that points Claude-compatible tools back to `AGENTS.md`.
+`AGENTS.md` is the source of truth for agent guidance in this repository. This repository retains a minimal `CLAUDE.md` import until direct loading is verified for its supported environments. See [Claude compatibility](agentsmd/references/claude-compatibility.md) for prerequisites and fallback options.

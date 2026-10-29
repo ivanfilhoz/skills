@@ -7,7 +7,7 @@ description: Create, update, and maintain a repository AGENTS.md instruction fil
 
 ## Goal
 
-Create and maintain a small, accurate `AGENTS.md` that helps agents work in the current repository without wasting instruction budget. Treat `AGENTS.md` as the source of truth for agent instructions, and keep other agent-specific instruction files as lightweight proxies when possible.
+Create and maintain a small, accurate `AGENTS.md` that helps agents work in the current repository without wasting instruction budget. Treat `AGENTS.md` as the source of truth for agent instructions. Prefer direct loading; use agent-specific proxies only when compatibility requires them.
 
 This workflow follows the AGENTS.md guidance from https://www.aihero.dev/a-complete-guide-to-agents-md: keep the root file small, avoid stale structure dumps, move narrower rules into progressively disclosed files, and include only guidance that is relevant often enough to justify loading on every session.
 
@@ -35,19 +35,17 @@ This workflow follows the AGENTS.md guidance from https://www.aihero.dev/a-compl
    - Preserve useful Claude/Cursor/Gemini/etc. guidance by migrating it into `AGENTS.md` or progressively disclosed docs before replacing proxy files.
    - Remove redundant, vague, or overly obvious instructions instead of moving clutter elsewhere.
 
-5. Create or update `CLAUDE.md` as a proxy.
-   - Prefer a plain file over a symlink unless the user explicitly asks for symlinks.
-   - Its complete contents should be:
-
-```md
-@AGENTS.md
-
-IMPORTANT: `./AGENTS.md` is the source of truth for agent instructions in this repo. On every new session, read and follow it before doing any work.
-```
+5. Decide whether Claude compatibility needs a proxy.
+   - Read [Claude compatibility](references/claude-compatibility.md) when creating, migrating, or removing Claude instruction files.
+   - Prefer `AGENTS.md` alone when direct loading is supported in the project's intended environments. Do not create `CLAUDE.md` unconditionally or assume the current machine represents every contributor.
+   - Remove a known proxy only after checking loading prerequisites. Recognize both a bare `@AGENTS.md` import and the legacy import followed by the source-of-truth reminder as proxies.
+   - Read any other `CLAUDE.md` in full and migrate useful shared guidance before removal. Preserve Claude-specific instructions when still needed. Do not delete ancestor or personal instruction files to enable fallback.
+   - When compatibility is required or uncertain, retain an existing working import. For a new compatibility proxy, use a plain `CLAUDE.md` containing `@AGENTS.md` on its own line, outside a code block. A prose pointer alone does not import instructions.
 
 6. Verify the result.
    - Re-read the final files for contradictions, broken links, stale paths, and commands that do not exist.
    - If you added or changed commands, run the smallest relevant verification command when practical.
+   - Before finalizing proxy removal, verify direct loading in a fresh Claude Code session. File presence and version checks alone do not prove loading. If verification fails or cannot run, preserve or restore the import unless the project explicitly excludes the unverified environments from support. Report the verification result and any support limitation.
    - Summarize what moved into root `AGENTS.md`, what moved into progressive docs, and any unresolved decisions.
 
 ## Root AGENTS.md Shape
